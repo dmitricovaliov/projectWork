@@ -10,6 +10,7 @@ public class Libro {
 	private int annoPubblicazione;
 	private double prezzo;
 	private int salvati;
+	private String nuova;
 	
 	//ho inserito un commento
 	
