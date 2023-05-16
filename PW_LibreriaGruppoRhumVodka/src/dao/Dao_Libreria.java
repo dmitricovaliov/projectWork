@@ -14,9 +14,9 @@ public class Dao_Libreria implements IDao{
 
 	private Database db;
 	
-	public Dao_Libreria(String percorso, String username, String password)
+	public Dao_Libreria(String percorso, String username, String password) //gli passiamo il Database
 	{
-		db = new Database(percorso, username, password);
+		db = new Database(percorso, username, password); //errore, crea dipendenza, crearlo nel main
 	}
 	
 	@Override
@@ -68,7 +68,7 @@ public class Dao_Libreria implements IDao{
 	@Override
 	public List<Utente> readUtente() {
 		List<Utente> elenco = new ArrayList<Utente>();
-		Utente u = null;
+		Utente utente = null;
 		
 		try
 		{
@@ -79,19 +79,18 @@ public class Dao_Libreria implements IDao{
 			
 			while(tabella.next())
 			{
-				u = new Utente(
+				utente = new Utente(
 						tabella.getInt(1),
 						tabella.getString(2),
 						tabella.getString(3),
-						tabella.getString(4),
-						tabella.getInt(5),
-						tabella.getDouble(6),
-						tabella.getInt(7)
+						tabella.getInt(4),
+						tabella.getString(5),
+						tabella.getString(6)
 						);
 				
-				if(a != null)
+				if(utente != null)
 				{
-					elenco.add(a);
+					elenco.add(utente);
 				}
 			}
 			
@@ -111,13 +110,13 @@ public class Dao_Libreria implements IDao{
 	}
 
 	@Override
-	public void create(Libro a) {
+	public void createLibro(Libro a) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void create(Utente u) {
+	public void createLibro(Utente u) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -129,7 +128,7 @@ public class Dao_Libreria implements IDao{
 	}
 
 	@Override
-	public void uodateUtente(Utente u) {
+	public void updateUtente(Utente u) {
 		// TODO Auto-generated method stub
 		
 	}

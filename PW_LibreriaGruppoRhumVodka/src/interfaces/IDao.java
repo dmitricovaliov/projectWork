@@ -11,11 +11,11 @@ public interface IDao {
 		public List<Libro> readLibro(); //Questa è SOLO la firma del metodo
 		public List<Utente> readUtente();
 		//Create
-		public void create(Libro a);
-		public void create(Utente u);
+		public void createLibro(Libro a);
+		public void createLibro(Utente u);
 		//Update
 		public void updateLibro(Libro a);
-		public void uodateUtente(Utente u);
+		public void updateUtente(Utente u);
 		//Delete
 		public void deleteLibro(int id);
 		public void deleteUtente(int id);
@@ -24,9 +24,9 @@ public interface IDao {
 		default String stampaElencoLibri()
 		{
 			String ris = "";
-			for(Libro a : readLibro())
+			for(Libro libro : readLibro())
 			{
-				ris += a.toString();
+				ris += libro.toString();
 			}
 			return ris;
 		}
@@ -34,9 +34,9 @@ public interface IDao {
 		default String stampaElencoUtenti() 
 		{
 			String ris="";
-			for(Utente u: readUtente())
+			for(Utente utente : readUtente())
 			{
-				ris+=u.toString();
+				ris+=utente.toString();
 			}
 			return ris;
 		}
