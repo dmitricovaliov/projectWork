@@ -11,6 +11,8 @@ public class Libro {
 	private double prezzo;
 	private int salvati;
 	
+	//commento Giulia
+	
 	public Libro(int id, String titolo, String autore, String genere, int annoPubblicazione, double prezzo, int salvati) {
 		setId(id);
 		setTitolo(titolo);
